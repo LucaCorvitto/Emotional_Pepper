@@ -1,0 +1,74 @@
+
+ff: parsing domain file
+domain 'PEPPER_DOMAIN' defined
+ ... done.
+ff: parsing problem file
+problem 'QUIZ_HARD' defined
+ ... done.
+
+
+lowest leaf goal distance/initial state f value seen:      6/     6; maxdepth reached:    0
+                                                           5/     5                       1
+                                                           4/     4                       2
+                                                           3/     3                       3
+                                                           2/     2                       4
+                                                           1/     1                       5
+                                                           1/     1                       6
+                                                           1/     1                       7
+                                                           1/     1                       8
+                                                           1/     1                       9
+
+ff: found plan as follows
+-------------------------------------------------
+  0||0 --- QUIZ_START --- SON: 1||0
+-------------------------------------------------
+  1||0 --- SHOW_QUESTION QUESTION_MARS --- SON: 2||0
+-------------------------------------------------
+  2||0 --- SHOW_QUESTION QUESTION_GUINNESS --- SON: 3||0
+-------------------------------------------------
+  3||0 --- SHOW_QUESTION QUESTION_SWARM --- SON: 4||0
+-------------------------------------------------
+  4||0 --- SHOW_QUESTION QUESTION_MANUFACTURED --- SON: 5||0
+-------------------------------------------------
+  5||0 --- CHECK_ANSWER QUESTION_MARS --- TRUESON: 6||0 --- FALSESON: 6||1
+-------------------------------------------------
+  6||0 --- CHECK_ANSWER QUESTION_GUINNESS --- TRUESON: 7||0 --- FALSESON: 7||1
+  6||1 --- CHECK_ANSWER QUESTION_GUINNESS --- TRUESON: 7||2 --- FALSESON: 7||3
+-------------------------------------------------
+  7||0 --- CHECK_ANSWER QUESTION_SWARM --- TRUESON: 8||0 --- FALSESON: 8||1
+  7||1 --- CHECK_ANSWER QUESTION_SWARM --- TRUESON: 8||2 --- FALSESON: 8||3
+  7||2 --- CHECK_ANSWER QUESTION_SWARM --- TRUESON: 8||4 --- FALSESON: 8||5
+  7||3 --- SAD_EMOTIONAL_RESPONSE_MEDIUM QUESTION_GUINNESS QUESTION_MARS QUESTION_SWARM QUESTION_MANUFACTURED --- SON: 8||-1
+-------------------------------------------------
+  8||0 --- HAPPY_EMOTIONAL_RESPONSE_MEDIUM QUESTION_SWARM QUESTION_GUINNESS QUESTION_MARS QUESTION_MANUFACTURED --- SON: 9||-1
+  8||1 --- CHECK_ANSWER QUESTION_MANUFACTURED --- TRUESON: 9||0 --- FALSESON: 9||1
+  8||2 --- CHECK_ANSWER QUESTION_MANUFACTURED --- TRUESON: 9||2 --- FALSESON: 9||3
+  8||3 --- SAD_EMOTIONAL_RESPONSE_MEDIUM QUESTION_SWARM QUESTION_GUINNESS QUESTION_MARS QUESTION_MANUFACTURED --- SON: 9||-1
+  8||4 --- CHECK_ANSWER QUESTION_MANUFACTURED --- TRUESON: 9||4 --- FALSESON: 9||5
+  8||5 --- SAD_EMOTIONAL_RESPONSE_MEDIUM QUESTION_SWARM QUESTION_MARS QUESTION_GUINNESS QUESTION_MANUFACTURED --- SON: 9||-1
+-------------------------------------------------
+  9||0 --- HAPPY_EMOTIONAL_RESPONSE_MEDIUM QUESTION_MANUFACTURED QUESTION_GUINNESS QUESTION_MARS QUESTION_SWARM --- SON: 10||-1
+  9||1 --- SAD_EMOTIONAL_RESPONSE_MEDIUM QUESTION_MANUFACTURED QUESTION_SWARM QUESTION_MARS QUESTION_GUINNESS --- SON: 10||-1
+  9||2 --- HAPPY_EMOTIONAL_RESPONSE_MEDIUM QUESTION_MANUFACTURED QUESTION_SWARM QUESTION_MARS QUESTION_GUINNESS --- SON: 10||-1
+  9||3 --- SAD_EMOTIONAL_RESPONSE_MEDIUM QUESTION_MANUFACTURED QUESTION_GUINNESS QUESTION_MARS QUESTION_SWARM --- SON: 10||-1
+  9||4 --- HAPPY_EMOTIONAL_RESPONSE_MEDIUM QUESTION_MANUFACTURED QUESTION_SWARM QUESTION_GUINNESS QUESTION_MARS --- SON: 10||-1
+  9||5 --- SAD_EMOTIONAL_RESPONSE_MEDIUM QUESTION_MANUFACTURED QUESTION_MARS QUESTION_GUINNESS QUESTION_SWARM --- SON: 10||-1
+-------------------------------------------------
+
+tree layers: 10
+total nr. actions: 24
+
+statistics:    0.00 seconds instantiating 57 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 15 facts and 57 actions
+               0.00 seconds creating final representation with 15 relevant facts (10 max U, 5 CNF max U)
+               final representation has 8 unknown facts and 18 observation actions    
+               0.00 seconds building connectivity graph
+               0.00 seconds (   0.00 pure) evaluating 905 states
+               0.00 seconds generating,    0.00 seconds encoding 1210 state transition base CNFs
+               0.00 seconds in DP solving 744 state transition CNFs
+               0.00 seconds checking for self-contradictions, including 0 DP calls
+               0.00 seconds checking for stagnating states (120 hits), including 590 DP calls
+               1334 total DP calls, 6122 total UP calls,    0.00 sec membership
+              0.01 seconds for remaining searching duties
+               0.01 seconds total time (+    0.00 secs for CNF memory allocation)
+
