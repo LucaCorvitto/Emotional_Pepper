@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="question-container">
+    <h1 class="question-heading">
+        What percentage of the world's robots are manufactured in Japan?
+    </h1>
+
+    <div class="options">
+        <button type="button" class="option-button" id="button1">1. 25%</button>
+        <button type="button" class="option-button" id="button2">2. 50%</button>
+        <button type="button" class="option-button" id="button3">3. 75%</button>
+        <button type="button" class="option-button" id="button4">4. 90%</button>
+    </div>
+
+</div>
+
+<script>
+
+
+    document.getElementById("button1").addEventListener("click", function() {
+        sendDataToServer("Wrong answer", "/wrong_answer");
+    });
+    document.getElementById("button2").addEventListener("click", function() {
+        sendDataToServer("Correct answer", "/correct_answer");
+    });
+    document.getElementById("button3").addEventListener("click", function() {
+        sendDataToServer("Wrong answer", "/wrong_answer");
+    });
+    document.getElementById("button4").addEventListener("click", function() {
+        sendDataToServer("Wrong answer", "/wrong_answer");
+    });
+
+    function sendDataToServer(data, nextPage) {
+        fetch('/endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'data': data }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Change the page after sending data to the server
+            if (nextPage) {
+                window.location.href = nextPage;
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+
+</script>
+
+{% endblock %}

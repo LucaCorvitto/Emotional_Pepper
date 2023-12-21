@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correct Answer</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #007bff; /* Blue background color */
+            color: #ffffff; /* White text color */
+            font-family: Arial, sans-serif;
+        }
+
+        .message {
+            font-size: 100px; /* Very large font size */
+            margin-bottom: 20px;
+        }
+
+        .button {
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e5e5e5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">
+        Wrong Answer :c
+    </div>
+    <button type="button" class="button" id="button">Ok</button>
+
+    <script>
+        document.getElementById("button").addEventListener("click", function() {
+            sendDataToServer("False_son", "/quiz")
+        });
+
+        function sendDataToServer(data, nextPage) {
+            fetch('/endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 'data': data }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Change the page after sending data to the server
+                if (nextPage) {
+                    window.location.href = nextPage;
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>

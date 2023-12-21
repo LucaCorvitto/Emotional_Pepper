@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff; /* White container background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+        }
+
+        .question-heading {
+            color: #ff6600; /* Orange heading color */
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column; /* Display buttons vertically */
+            align-items: center; /* Center buttons horizontally */
+        }
+
+        .option-button {
+            background-color: #4caf50; /* Green button background */
+            color: #ffffff; /* White button text color */
+            padding: 30px 60px; /* Even larger button padding */
+            margin: 10px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 20px; /* Larger font size */
+        }
+
+        .option-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correct Answer</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #007bff; /* Blue background color */
+            color: #ffffff; /* White text color */
+            font-family: Arial, sans-serif;
+        }
+
+        .message {
+            font-size: 100px; /* Very large font size */
+            margin-bottom: 20px;
+        }
+
+        .button {
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e5e5e5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">
+        Quiz ended.
+    </div>
+</body>
+
+<script>
+    setTimeout(function() {
+            window.location.href = "/shutdown";
+        }, 5000); // Redirect after 5 seconds
+</script>
+
+</html>
