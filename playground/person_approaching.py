@@ -80,8 +80,6 @@ class FirstApproach:
                         self.dialogue.say("Uh, okay. Let me know if and when you are prepared to talk with me! I will wait for you!")
                         time.sleep(3.0)
                         return self.interact() #repeat the interaction from the start
-            else:
-                self.emotion.happy_emotional_response(mode='interview')
                     
             
             # user accepted to go on
