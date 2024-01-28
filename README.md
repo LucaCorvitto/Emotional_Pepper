@@ -1,6 +1,13 @@
 # Emotional_Pepper
 Human Robot Interaction performed with a Pepper robot showing emotive reactions to the opinions of the user while collecting personal data.
 
+<!-- | Neutral reaction | Sad Reaction | Happy reaction |
+| ----- | ----- | ----- | 
+| <img width="150" height="200" alt="neutral" src="https://github.com/LucaCorvitto/Emotional_Pepper/assets/87773518/675b1e1f-44e5-4fd2-9c05-1dae9425cff1"> | <img width="150" height="200" alt="sad" src="https://github.com/LucaCorvitto/Emotional_Pepper/assets/87773518/b7c1911c-1067-4fe2-adff-df570ceb7c05"> | <img width="150" height="200" alt="happy1" src="https://github.com/LucaCorvitto/Emotional_Pepper/assets/87773518/8cb94a24-f92e-45f7-ac0a-cbde374c48f2"> <img width="150" height="200" alt="happy2" src="https://github.com/LucaCorvitto/Emotional_Pepper/assets/87773518/8768c298-e41e-4dd2-ad05-48d7c5db2612"> | -->
+
+
+
+
 ## Description of the interaction
 ![image](https://github.com/LucaCorvitto/Emotional_Pepper/blob/main/images/flow_chart_report_single_page.png)
 
